@@ -24,7 +24,6 @@ mkdir -p /tmp/xiaohongshu-mcp
 cd /tmp/xiaohongshu-mcp
 
 # 下载最新包 (请替换为实际的下载链接)
-wget https://github.com/xpzouying/xiaohongshu-mcp/releases/latest/download/xiaohongshu-mcp-linux-amd64.tar.gz
 
 # 解压
 tar -xzf xiaohongshu-mcp-linux-amd64.tar.gz
