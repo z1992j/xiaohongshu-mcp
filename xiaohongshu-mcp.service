@@ -1,0 +1,25 @@
+[Unit]
+Description=Xiaohongshu MCP Service
+Documentation=https://github.com/xpzouying/xiaohongshu-mcp
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/xiaohongshu-mcp
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Environment="TZ=Asia/Shanghai"
+Environment="ROD_BROWSER_BIN=/usr/bin/google-chrome"
+ExecStart=/opt/xiaohongshu-mcp/xiaohongshu-mcp -headless=true
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=xiaohongshu-mcp
+
+# 安全增强
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
